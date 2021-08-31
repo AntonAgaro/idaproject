@@ -1,0 +1,72 @@
+.form-wrapper {
+  display: grid;
+  grid-template-columns: 1 1fr;
+}
+
+.form {
+  width: 20.75rem;
+  padding: 1.5rem;
+  @include flex-column-start;
+  gap: 1rem;
+
+  &__item {
+    width: 100%;
+    @include flex-column-start;
+    gap: 0.25rem;
+  }
+
+  &__label {
+    position: relative;
+    font-family: Source Sans Pro;
+    font-weight: 400;
+    font-size: 0.625rem;
+    letter-spacing: -0.02em;
+    color: $form-text-color;
+  }
+
+  &__red-circle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    top: 0;
+    right: -5px;
+    background: #FF8484;
+    border-radius: 4px;
+  }
+
+  &__input {
+    padding: 0.625rem 1rem;
+    width: 100%;
+    background: #FFFEFB;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    font-family: Source Sans Pro;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: $text-color;
+
+    &--big {
+      height: 108px;
+      resize: none;
+    }
+  }
+
+  &__button {
+    margin-top: 0.5rem;
+    width: 100%;
+    padding: 0.625rem 0;
+    @include flex-center;
+    background: #EEEEEE;
+    border-radius: 10px;
+    border: none;
+    font-family: Inter;
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-size: 0.75;
+    letter-spacing: -0.02em;
+    color: $second-color;
+    
+  }
+}

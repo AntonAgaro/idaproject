@@ -3,23 +3,31 @@ body {
 	height: 100%;
 }
 
-.wrapper {
-	display: flex;
-	flex-direction: column;
-	min-height: 100%;
+* {
+  cursor: url('../images/hover.png'), pointer;
 }
 
-.main {
-	flex: 1 0 auto;
-}
-.footer {
-	flex: 0 0 auto;
+html {
+  font-size: 100%;
+
+  @media (max-width: 1150px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 850px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 650px) {
+    font-size: 10px;
+  }
 }
 
 .container{
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 32px;
+	background: $bgc-color;
 }
 
 

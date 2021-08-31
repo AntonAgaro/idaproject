@@ -1,0 +1,6 @@
+.content-wrapper {
+  margin-top: 1rem;
+  @include flex-start;
+  gap: 1rem;
+}
+

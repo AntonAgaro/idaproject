@@ -19,7 +19,7 @@
 @mixin flex-start {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
 }
 
 @mixin flex-column-center {
@@ -33,5 +33,5 @@
   display: flex;
   flex-flow: column;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
 }
