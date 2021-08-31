@@ -1,7 +1,7 @@
-const putCardToBasket = () => {
+const putCardToTrash = () => {
   const cards = document.querySelectorAll('.card');
 
-  const markByBasket = (card) => {
+  const markByTrash = (card) => {
     if (card.querySelector('.card__basket')) {
       card.querySelector('.card__basket').remove();
       return;
@@ -16,9 +16,9 @@ const putCardToBasket = () => {
   cards.forEach(item => {
     item.addEventListener('click', (e) => {
       const choosenCard = e.target.closest('.card');
-      markByBasket(choosenCard);
+      markByTrash(choosenCard);
     });
   })
 }
 
-export default putCardToBasket;
+export default putCardToTrash;

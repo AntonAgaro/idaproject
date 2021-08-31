@@ -13,7 +13,7 @@ export default class Card {
     card.id = this.id;
     card.className = 'card';
     card.innerHTML = `
-      <img class="card__img" src="${this.img}" alt="card">
+      <img class="card__img" src=${this.img} alt="card">
       <div class="card__text-wrapper">
         <div class="card__title">${this.name}</div>
         <div class="card__descr">${this.descr}</div>
