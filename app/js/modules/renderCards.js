@@ -7,6 +7,6 @@ const renderCards = (cards) => {
     const {img, name, descr, price} = item;
     new Card(index, img, name, descr, price, cardsWrapper).render();
   });
-}
+};
 
 export default renderCards;

@@ -1,5 +1,5 @@
 export default class Card {
-  constructor(id, img, name, descr, price, container) {
+  constructor(id,img, name, descr, price, container) {
     this.id = id;
     this.img = img;
     this.name = name;
@@ -10,8 +10,8 @@ export default class Card {
 
   render() {
     const card = document.createElement('div');
-    card.id = this.id;
     card.className = 'card';
+    card.id = this.id;
     card.innerHTML = `
       <img class="card__img" src=${this.img} alt="card">
       <div class="card__text-wrapper">

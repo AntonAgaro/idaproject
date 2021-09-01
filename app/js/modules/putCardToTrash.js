@@ -1,5 +1,5 @@
+
 const putCardToTrash = () => {
-  const cards = document.querySelectorAll('.card');
 
   const markByTrash = (card) => {
     if (card.querySelector('.card__basket')) {
@@ -11,14 +11,18 @@ const putCardToTrash = () => {
     basket.src = './images/basket.png';
     basket.className = 'card__basket';
     card.append(basket);
-  } 
+  }; 
 
-  cards.forEach(item => {
-    item.addEventListener('click', (e) => {
+  document.addEventListener('click', e => {
+    if ((e.target.matches('.card') || e.target.matches('.card *')) 
+        && !e.target.matches('.card__basket')) {
       const choosenCard = e.target.closest('.card');
       markByTrash(choosenCard);
-    });
-  })
-}
+    } 
+    
+  });
+
+
+};
 
 export default putCardToTrash;
