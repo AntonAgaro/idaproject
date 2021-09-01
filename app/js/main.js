@@ -1,7 +1,8 @@
 import renderCards from './modules/renderCards';
 import putCardToTrash from './modules/putCardToTrash';
 import validateForm from './modules/validateForm';
-import renewCardsId from './modules/renewCardsId';
+import {renewCardsId, cleanContainer} from './modules/utils';
+import sortCards from './modules/sortCards';
 
 const getItemsFromLocalStorage = () => {
   const list = JSON.parse(localStorage.getItem('cardsList'));
@@ -30,19 +31,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('click', e => {
     if (e.target.matches('.card__basket')) {
-      const container = document.querySelector('.cards-wrapper');
       const choosenCard = e.target.closest('.card');
-      console.log(typeof choosenCard.id );
       const changedList = getItemsFromLocalStorage().filter(item => item.id !== +choosenCard.id);
-      console.log(changedList);
       renewCardsId(changedList);
       setItemsToLocalStorage(changedList);
-      container.querySelectorAll('.card').forEach(item => item.remove());
+      cleanContainer();
       renderCards(getItemsFromLocalStorage());
     }
   });
 
-  validateForm('.cards-wrapper');
+  validateForm();
+
+  sortCards();
 });
 
 export {getItemsFromLocalStorage, setItemsToLocalStorage};

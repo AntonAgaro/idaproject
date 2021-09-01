@@ -1,9 +1,9 @@
 import renderCards from "./renderCards";
 import {getItemsFromLocalStorage, setItemsToLocalStorage} from '../main';
-import renewCardsId from "./renewCardsId";
+import {renewCardsId, cleanContainer} from "./utils";
 
-const validateForm = (container) => {
-  container = document.querySelector('.cards-wrapper');
+const validateForm = () => {
+  
   const form = document.getElementById('add-card-form');
   const button = document.getElementById('form-button');
   const inputs = form.querySelectorAll('.form__input');
@@ -51,7 +51,7 @@ const validateForm = (container) => {
     newCardsList.push(state);
     renewCardsId(newCardsList);
     setItemsToLocalStorage(newCardsList);
-    container.querySelectorAll('.card').forEach(item => item.remove());
+    cleanContainer();
     renderCards(getItemsFromLocalStorage());
     e.target.reset();
   });
